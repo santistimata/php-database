@@ -14,7 +14,9 @@
 <body>
     
     <h1>Daftar Mahasiswa</h1>
-
+    
+    <a href="tambah.php">Tambah Data Mahasiswa</a>
+    <br><br>
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>No.</th>
@@ -31,7 +33,7 @@
             <td><?= $i ?></td>
             <td>
                 <a href="">ubah</a>
-                <a href="">hapus</a>
+                <a href="hapus.php?id=<?= $row['id'] ?>">hapus</a>
             </td>
             <td>
                 <img src="img/<?= $row['gambar'] ?>" alt="">
