@@ -31,4 +31,25 @@
         mysqli_query($koneksi, "DELETE FROM data_mhs WHERE id = $id");
         return mysqli_affected_rows($koneksi); 
     }
+
+    function ubah($data) {
+        global $koneksi;
+        $id = $data["id"];
+        $nama = $data["nama"];
+        $nim = $data["nim"];
+        $email = $data["email"];
+        $jurusan = $data["jurusan"];
+        $gambar = $data["gambar"];
+
+        $query = "UPDATE data_mhs SET
+                    nama = '$nama',
+                    nim = '$nim',
+                    email = '$email',
+                    jurusan = '$jurusan',
+                    gambar = '$gambar'
+                    WHERE id = $id";
+        mysqli_query($koneksi, $query);
+
+        return mysqli_affected_rows($koneksi);
+    }
 ?>
