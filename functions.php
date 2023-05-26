@@ -52,4 +52,16 @@
 
         return mysqli_affected_rows($koneksi);
     }
+
+    function cari($keyword) {
+        $query = "SELECT * FROM data_mhs
+                    WHERE 
+                    nama LIKE '%$keyword%' OR
+                    nim LIKE '%$keyword%' OR
+                    email LIKE '%$keyword%' OR
+                    jurusan LIKE '%$keyword%'
+                ";
+
+        return query($query);
+    }
 ?>
